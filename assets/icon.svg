@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b0420"/>
+      <stop offset="0.55" stop-color="#05010f"/>
+      <stop offset="1" stop-color="#160533"/>
+    </linearGradient>
+    <!-- 手柄机身：深碳纤 + 顶部微光 -->
+    <linearGradient id="body" x1="0" y1="352" x2="0" y2="676" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1b2657"/>
+      <stop offset="0.45" stop-color="#0d1434"/>
+      <stop offset="1" stop-color="#060a1e"/>
+    </linearGradient>
+    <radialGradient id="haloC" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#00f0ff" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#00f0ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="haloM" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ff2bd6" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#ff2bd6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vig" cx="0.5" cy="0.45" r="0.75">
+      <stop offset="0.62" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.55"/>
+    </radialGradient>
+    <linearGradient id="hglowUp" x1="0" y1="640" x2="0" y2="758" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff2bd6" stop-opacity="0"/>
+      <stop offset="1" stop-color="#ff2bd6" stop-opacity="0.28"/>
+    </linearGradient>
+    <linearGradient id="hglowDn" x1="0" y1="758" x2="0" y2="920" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7a5cff" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#7a5cff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="gridfade" x1="0" y1="758" x2="0" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+    <mask id="gridmask"><rect x="0" y="758" width="1024" height="266" fill="url(#gridfade)"/></mask>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="14" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowS" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="blurM" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <pattern id="scan" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="2.5" fill="#9beaff" opacity="0.04"/>
+    </pattern>
+  </defs>
+
+  <!-- 背景 / 扫描线 -->
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <rect width="1024" height="1024" fill="url(#scan)"/>
+
+  <!-- 对角能量光刃 -->
+  <g stroke-linecap="round" fill="none">
+    <path d="M-60 430 L430 -60" stroke="#00f0ff" stroke-width="5" opacity="0.4" filter="url(#glowS)"/>
+    <path d="M-60 500 L360 80" stroke="#00f0ff" stroke-width="2.5" opacity="0.3"/>
+    <path d="M594 1084 L1084 594" stroke="#ff2bd6" stroke-width="5" opacity="0.4" filter="url(#glowS)"/>
+    <path d="M664 1084 L1084 664" stroke="#ff2bd6" stroke-width="2.5" opacity="0.3"/>
+  </g>
+
+  <!-- 合成波地平线 + 透视网格 -->
+  <rect x="0" y="640" width="1024" height="118" fill="url(#hglowUp)"/>
+  <rect x="0" y="758" width="1024" height="162" fill="url(#hglowDn)"/>
+  <g mask="url(#gridmask)">
+    <g stroke="#19e3ff" stroke-width="2.5" opacity="0.3">
+      <path d="M512 758 L-384 1024"/><path d="M512 758 L-128 1024"/>
+      <path d="M512 758 L128 1024"/><path d="M512 758 L384 1024"/>
+      <path d="M512 758 L640 1024"/><path d="M512 758 L896 1024"/>
+      <path d="M512 758 L1152 1024"/><path d="M512 758 L1408 1024"/>
+    </g>
+    <g stroke="#ff2bd6">
+      <path d="M0 792 H1024" stroke-width="2" opacity="0.26"/>
+      <path d="M0 824 H1024" stroke-width="2.5" opacity="0.28"/>
+      <path d="M0 864 H1024" stroke-width="3" opacity="0.3"/>
+      <path d="M0 912 H1024" stroke-width="4" opacity="0.32"/>
+      <path d="M0 968 H1024" stroke-width="5" opacity="0.34"/>
+    </g>
+  </g>
+  <path d="M0 758 H1024" stroke="#ff5ce1" stroke-width="4" opacity="0.8" filter="url(#glowS)"/>
+
+  <!-- 暗角 -->
+  <rect width="1024" height="1024" fill="url(#vig)"/>
+
+  <!-- 环境辉光 -->
+  <circle cx="512" cy="500" r="360" fill="url(#haloC)"/>
+  <circle cx="512" cy="540" r="260" fill="url(#haloM)"/>
+
+  <!-- 轨道光环（后环） -->
+  <g transform="rotate(-14 512 512)">
+    <ellipse cx="512" cy="512" rx="360" ry="100" fill="none" stroke="#00f0ff" stroke-width="4" opacity="0.4" filter="url(#glowS)"/>
+  </g>
+
+  <!-- 碎裂晶片 -->
+  <g filter="url(#glowS)">
+    <path d="M836 348 L868 366 L838 384 Z" fill="#00f0ff" opacity="0.85"/>
+    <path d="M196 560 L230 574 L200 594 Z" fill="#ff2bd6" opacity="0.75"/>
+    <path d="M760 668 L784 678 L762 690 Z" fill="#00f0ff" opacity="0.6"/>
+    <path d="M232 300 L252 310 L232 322 Z" fill="#ff2bd6" opacity="0.55"/>
+  </g>
+
+  <!-- 手柄轮廓（棱角机甲剪影） -->
+  <!-- 色差残影 -->
+  <path d="M352 352 L672 352 L716 396 L780 560 L756 668 L692 676 L636 600 L560 584 L464 584 L388 600 L332 676 L268 668 L244 560 L308 396 Z"
+        transform="translate(11 8)" fill="none" stroke="#ff2bd6" stroke-width="8" stroke-linejoin="miter" opacity="0.5"/>
+  <path d="M352 352 L672 352 L716 396 L780 560 L756 668 L692 676 L636 600 L560 584 L464 584 L388 600 L332 676 L268 668 L244 560 L308 396 Z"
+        transform="translate(-9 -7)" fill="none" stroke="#00f0ff" stroke-width="8" stroke-linejoin="miter" opacity="0.45"/>
+  <!-- 外层辉光 -->
+  <path d="M352 352 L672 352 L716 396 L780 560 L756 668 L692 676 L636 600 L560 584 L464 584 L388 600 L332 676 L268 668 L244 560 L308 396 Z"
+        fill="none" stroke="#00f0ff" stroke-width="26" stroke-linejoin="miter" stroke-miterlimit="8" opacity="0.85" filter="url(#blurM)"/>
+  <!-- 机身 + 霓虹刃边 -->
+  <path d="M352 352 L672 352 L716 396 L780 560 L756 668 L692 676 L636 600 L560 584 L464 584 L388 600 L332 676 L268 668 L244 560 L308 396 Z"
+        fill="url(#body)" stroke="#00f0ff" stroke-width="11" stroke-linejoin="miter" stroke-miterlimit="8" filter="url(#glowS)"/>
+  <!-- 顶部高光棱线 -->
+  <path d="M352 352 L672 352" stroke="#ffffff" stroke-width="3" opacity="0.8"/>
+
+  <!-- 轨道光环（前弧） -->
+  <g transform="rotate(-14 512 512)">
+    <ellipse cx="512" cy="512" rx="360" ry="100" fill="none" stroke="#7df9ff" stroke-width="6"
+             stroke-dasharray="280 1400" stroke-dashoffset="-560" opacity="0.85" filter="url(#glowS)"/>
+  </g>
+
+  <!-- 十字方向键（品红霓虹） -->
+  <g filter="url(#glowS)">
+    <path d="M356 420 H396 V450 H426 V490 H396 V520 H356 V490 H326 V450 H356 Z"
+          fill="#ff2bd6" fill-opacity="0.28" stroke="#ff5ce1" stroke-width="6" stroke-linejoin="miter"/>
+  </g>
+
+  <!-- 四色能量按键 -->
+  <g filter="url(#glowS)">
+    <circle cx="648" cy="426" r="17" fill="#00f0ff"/>
+    <circle cx="692" cy="470" r="17" fill="#ff2bd6"/>
+    <circle cx="648" cy="514" r="17" fill="#7a5cff"/>
+    <circle cx="604" cy="470" r="17" fill="#eaffff"/>
+  </g>
+
+  <!-- 中央能量槽 + START/SELECT 刃线 -->
+  <g filter="url(#glowS)">
+    <path d="M488 458 L536 458 L546 470 L536 482 L488 482 L478 470 Z"
+          fill="#00f0ff" fill-opacity="0.3" stroke="#7df9ff" stroke-width="4"/>
+    <path d="M470 508 L502 508" stroke="#ff5ce1" stroke-width="6" stroke-linecap="round"/>
+    <path d="M522 508 L554 508" stroke="#ff5ce1" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <!-- 握把散热刃纹 -->
+  <g stroke="#00f0ff" stroke-width="4" stroke-linecap="round" opacity="0.5">
+    <path d="M292 596 L316 620"/><path d="M308 580 L332 604"/>
+    <path d="M732 596 L708 620"/><path d="M716 580 L692 604"/>
+  </g>
+
+  <!-- 锐利十字星芒 -->
+  <g fill="#eaffff" filter="url(#glowS)">
+    <path d="M780 160 L787 223 L850 230 L787 237 L780 300 L773 237 L710 230 L773 223 Z"/>
+    <path d="M250 204 L255 244 L295 249 L255 254 L250 294 L245 254 L205 249 L245 244 Z" opacity="0.9"/>
+  </g>
+</svg>
