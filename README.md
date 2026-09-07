@@ -10,6 +10,10 @@
 
 [🌐 在线网站](https://www.qiaiwan.top) · [🔌 开放 API 文档](https://www.qiaiwan.top/api-docs) · [🧩 浏览器扩展](https://www.qiaiwan.top/extension) · [📖 抖音无水印下载教程](https://www.qiaiwan.top/how-to-download-douyin-video)
 
+> 💰 **获取完整源码 / 商业授权**：本仓库仅为功能演示与推广，**不包含任何源代码**。
+> 如需购买完整源码（九大平台解析引擎 + 网页前端 + 浏览器扩展 + 开放 API + 部署搭建），
+> 或洽谈商业授权 / 定制 / 私有化部署，请加微信 **`Liu782694171`**（备注「源码」）。
+
 ![DouParse 首页](assets/promo-img-home.png)
 
 ## ✨ 功能特性
@@ -78,6 +82,26 @@ Zhihu and more; download original videos, image sets, background music and cover
 No login, no app install, totally free. A free **open API** returns watermark-free direct links for developers.
 Try it online: <https://www.qiaiwan.top>
 
-## License
+## 💰 源码购买 / 商业授权
 
-MIT © DouParse
+本仓库（含在线站点）展示的是**成品功能与使用方式**，**不提供源代码**。若你需要：
+
+- **完整源码**：九大平台解析引擎（后端）+ 网页前端 + 浏览器扩展 + 开放 API 全套代码；
+- **部署搭建**：帮你部署到自己的服务器 / 域名，可独立运营；
+- **商业授权 / 定制**：二次开发、功能定制、私有化部署、品牌替换等。
+
+请联系：
+
+| 方式 | 号码 |
+|---|---|
+| 微信 | `Liu782694171`（添加时备注「源码」） |
+
+> 源码采用一次性买断 / 授权制，具体价格与交付方式加微信详谈。
+
+## 版权声明 / License
+
+版权所有 © 2026 DouParse（抖解）· 保留所有权利（All Rights Reserved）。
+
+本仓库的文档、图片与在线服务仅供展示与推广，**不包含源代码**。未经版权所有人书面授权，
+禁止复制、转载、修改、分发、再许可或用于任何商业用途。如需完整源码或商业授权，
+请加微信 `Liu782694171` 联系（备注「源码」）。
