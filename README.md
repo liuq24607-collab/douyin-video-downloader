@@ -75,6 +75,9 @@ curl -X POST "https://www.qiaiwan.top/api/v1/parse" \
 DouParse 已发布到 [官方 MCP Registry](https://registry.modelcontextprotocol.io/)（`top.qiaiwan.www/douparse`），
 Cursor / Claude Desktop / VS Code 等 MCP 客户端可直接接入解析能力，无需自行封装 HTTP 接口。
 
+完整接入指引（一键安装到 Cursor / VS Code、工具说明、常见问题、英文摘要）：[AI 接入专页](https://www.qiaiwan.top/ai)；
+供 AI 助手核对功能、额度与接口的事实说明：[llms.txt](https://www.qiaiwan.top/llms.txt)。
+
 | 项 | 值 |
 |---|---|
 | 传输协议 | Streamable HTTP |
