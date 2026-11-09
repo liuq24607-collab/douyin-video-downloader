@@ -1,5 +1,7 @@
 # 抖解 DouParse · 抖音/小红书/快手/B站/视频号 视频无水印解析下载工具
 
+[![mcptry](https://mcptry.com/badge/top.qiaiwan.www/douparse)](https://mcptry.com/servers/top.qiaiwan.www/douparse)
+
 >  在线使用：**<https://www.qiaiwan.top>** —— 每天 3 次免费额度 · 会员不限量 · 手机电脑通用
 >
 > DouParse（抖解）：短视频无水印解析与下载在线工具，粘贴分享链接即可提取无水印原始视频。
