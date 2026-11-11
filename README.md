@@ -10,9 +10,10 @@
 支持 **抖音、小红书、B站（哔哩哔哩）、快手、微信视频号、知乎、好看视频、西瓜视频、贴吧** 九大平台，
 并提供**免费开放 API**（视频解析接口）与 **MCP Server**，适合脚本自动化与 AI 助手调用。
 
-[🌐 在线网站](https://www.qiaiwan.top) · [🔌 开放 API 文档](https://www.qiaiwan.top/api-docs) · [🤖 MCP 接入](#-mcp-serverai-助手直接调用) · [🧩 浏览器扩展](https://www.qiaiwan.top/extension) · [📖 抖音无水印下载教程](https://www.qiaiwan.top/how-to-download-douyin-video)
+[🌐 在线网站](https://www.qiaiwan.top) · [🔌 开放 API 文档](https://www.qiaiwan.top/api-docs) · [🐍 Python SDK](sdk-python/) · [🤖 MCP 接入](#-mcp-serverai-助手直接调用) · [🧩 浏览器扩展](https://www.qiaiwan.top/extension) · [📖 抖音无水印下载教程](https://www.qiaiwan.top/how-to-download-douyin-video)
 
-> 💰 **获取完整源码 / 商业授权**：本仓库仅为功能演示与推广，**不包含服务端源代码**。
+> 💰 **获取完整源码 / 商业授权**：本仓库仅为功能演示与推广，**不包含服务端源代码**
+>（`sdk-python/` 内是调用开放 API 的客户端 SDK，不涉及服务端源码，MIT 单独授权）。
 > 如需购买完整源码（九大平台解析引擎 + 网页前端 + 浏览器扩展 + 开放 API + 部署搭建），
 > 或洽谈商业授权 / 定制 / 私有化部署，请加微信 **`Liu782694171`**（备注「源码」）。
 
@@ -70,6 +71,24 @@ curl -X POST "https://www.qiaiwan.top/api/v1/parse" \
 
 免费领取 API Key、配额计费规则与错误码见 [开放 API 文档](https://www.qiaiwan.top/api-docs)。
 
+### 🐍 Python SDK（单文件客户端）
+
+不想手写 HTTP？把 [`sdk-python/douparse.py`](sdk-python/douparse.py) 拷进项目即可（单文件，仅依赖 `requests`，MIT）：
+
+```python
+from douparse import DouParse
+
+dp = DouParse("dpk_xxxxxxxx")            # 或设环境变量 DOUPARSE_API_KEY
+data = dp.parse("https://v.douyin.com/xxxxxx/")
+
+print(data["play_url"])                               # 无水印视频直链
+print((data.get("music") or {}).get("play_url", ""))  # 抖音原声 MP3 直链（可能为空）
+```
+
+按 `aweme_type`（video / image / product）分支处理图集与商品素材，抖音原声 MP3 直链同一次响应直接拿，
+`balance()` 查余额，限频与「缓存不扣次」计费规则均已如实处理。字段速查、错误码表与下载示例见
+[`sdk-python/README.md`](sdk-python/README.md)。
+
 ## 🤖 MCP Server（AI 助手直接调用）
 
 DouParse 已发布到 [官方 MCP Registry](https://registry.modelcontextprotocol.io/)（`top.qiaiwan.www/douparse`），
@@ -122,6 +141,7 @@ Parse share links from Douyin (TikTok China), Xiaohongshu (RED), Kuaishou, Bilib
 Zhihu and more; download original videos, image sets, background music and covers **without watermark**.
 Free daily quota (3 parses), no app install, membership for unlimited use. A free **open API** and an
 official-registry **MCP server** return watermark-free direct links for developers and AI assistants.
+A single-file **Python SDK** ([`sdk-python/`](sdk-python/), MIT) wraps the open API.
 Try it online: <https://www.qiaiwan.top>
 
 ## 💰 源码购买 / 商业授权
@@ -145,5 +165,8 @@ Try it online: <https://www.qiaiwan.top>
 版权所有 © 2026 DouParse（抖解）· 保留所有权利（All Rights Reserved）。
 
 本仓库的文档、图片与在线服务仅供展示与推广，**不包含服务端源代码**。未经版权所有人书面授权，
-禁止复制、转载、修改、分发、再许可或用于任何商业用途。如需完整源码或商业授权，
+禁止复制、转载、修改、分发、再许可或用于任何商业用途。
+
+**唯一例外**：[`sdk-python/`](sdk-python/) 目录下的 Python 客户端 SDK 以 [MIT](sdk-python/LICENSE)
+单独授权，可自由复制、修改与使用。如需完整源码或商业授权，
 请加微信 `Liu782694171` 联系（备注「源码」）。
